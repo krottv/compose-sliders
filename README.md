@@ -4,6 +4,7 @@ This package allows you to build highly customizable sliders and tracks for comp
 <img src="https://github.com/krottv/compose-sliders/blob/master/showcase.png?raw=true" alt="showcase" width="400"/>
 
 # Gradle
+[![Release](https://jitpack.io/v/krottv/compose-sliders.svg)](https://jitpack.io/#krottv/compose-sliders)
 
 Add it in your root build.gradle at the end of repositories:
 ```
@@ -15,7 +16,7 @@ allprojects {
 ```
 Add the dependency
 ```
-implementation "com.github.krottv:compose-sliders:$compose-sliders-version"
+implementation "com.github.krottv:compose-sliders:library:$compose_sliders_version"
 ```
 
 # Simple Usage

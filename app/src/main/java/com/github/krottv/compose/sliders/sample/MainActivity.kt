@@ -21,6 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
+import com.github.krottv.compose.sliders.DefaultThumb
+import com.github.krottv.compose.sliders.DefaultTrack
 import com.github.krottv.compose.sliders.SliderValueHorizontal
 import com.github.krottv.compose.sliders.ListenOnPressed
 
@@ -65,7 +67,19 @@ internal fun SlidersPresentation() {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(80.dp), steps = 10,
-            thumbHeightMax = true
+            thumbHeightMax = true,
+            track = { p1, p2, p3, p4, p5 -> DefaultTrack(p1, p2, p3, p4, p5, height = 4.dp) },
+            thumb = { p1, p2, p3, p4, p5 ->
+                DefaultThumb(
+                    p1,
+                    p2,
+                    p3,
+                    p4,
+                    p5,
+                    color = Color.Blue,
+                    scaleOnPress = 1.3f
+                )
+            }
         )
 
         Text(
@@ -82,9 +96,7 @@ internal fun SlidersPresentation() {
             thumbHeightMax = false,
             track = { modifier: Modifier,
                       progress: Float,
-                      _: MutableInteractionSource,
-                      _: List<Float>,
-                      _: Boolean ->
+                      _, _, _ ->
 
                 Box(
                     Modifier.padding(vertical = 30.dp)
@@ -114,9 +126,9 @@ internal fun SlidersPresentation() {
                             .then(modifier)
                     )
                 }
-            }, thumb = { modifier: Modifier, dp: Dp,
-                         mutableSource: MutableInteractionSource,
-                         enabled: Boolean, dpSize: DpSize ->
+            }, thumb = { modifier, _: Dp,
+                         mutableSource,
+                         _, _ ->
 
                 var isPressed by remember { mutableStateOf(false) }
                 mutableSource.ListenOnPressed { isPressed = it }

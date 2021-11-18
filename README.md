@@ -8,14 +8,14 @@ This package allows you to build highly customizable sliders and tracks for comp
 Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
-		repositories {
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 Add the dependency
 ```
-implementation 'com.github.krottv:compose-sliders:$compose-sliders-version'
+implementation "com.github.krottv:compose-sliders:$compose-sliders-version"
 ```
 
 # Simple Usage
@@ -106,8 +106,8 @@ SliderValueHorizontal(
     thumbSizeInDp = DpSize(60.dp, 30.dp)
 )
 ```
-# Plans
-Currently we have only SliderValueHorizontal. The code is mainly based on Slider from compose material package. With the abilities of additional customization. This project is inspired by [swiftui-sliders](https://github.com/spacenation/swiftui-sliders). In the future it is possible to add SliderValueVertical, SliderRangeHorizonta, SliderRangeVertical if there is a demand for it.
+# About
+The code is mainly based on Slider from compose material package with the abilities of additional customization. This project is inspired by [swiftui-sliders](https://github.com/spacenation/swiftui-sliders). Currently we have only SliderValueHorizontal and in the future it is possible to add SliderValueVertical, SliderRangeHorizonta, SliderRangeVertical if there is a demand for it.
 
 # License
 

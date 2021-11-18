@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Custom Slider Compose"
+rootProject.name = "Compose Sliders"
 include ':app'
 include ':library'

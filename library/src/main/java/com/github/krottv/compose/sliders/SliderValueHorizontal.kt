@@ -287,7 +287,9 @@ private suspend fun animateToTarget(
     }
 }
 
-private val SliderToTickAnimation = TweenSpec<Float>(durationMillis = 100)
+private val SliderToTickAnimation by lazy {
+    TweenSpec<Float>(durationMillis = 100)
+}
 
 private class SliderDraggableState(
     val onDelta: (Float) -> Unit

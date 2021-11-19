@@ -118,7 +118,7 @@ fun SliderValueHorizontal(
         val minPx = 0f
         val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
 
-        // value that is scaled and clipped to range
+        // value that is scaled to 0..1f range and clipped
         val fraction = calcFraction(
             valueRange.start,
             valueRange.endInclusive,

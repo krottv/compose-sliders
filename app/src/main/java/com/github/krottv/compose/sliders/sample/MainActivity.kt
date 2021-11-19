@@ -7,6 +7,7 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.TweenSpec
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
@@ -67,14 +68,29 @@ internal fun SlidersPresentation() {
                 .fillMaxWidth()
                 .height(80.dp), steps = 10,
             thumbHeightMax = true,
-            track = { p1, p2, p3, p4, p5 -> DefaultTrack(p1, p2, p3, p4, p5, height = 4.dp) },
-            thumb = { p1, p2, p3, p4, p5 ->
+            track = { modifier: Modifier,
+                      fraction: Float,
+                      interactionSource: MutableInteractionSource,
+                      tickFractions: List<Float>,
+                      enabled: Boolean ->
+
+                DefaultTrack(
+                    modifier,
+                    fraction,
+                    interactionSource,
+                    tickFractions,
+                    enabled,
+                    height = 4.dp
+                )
+            },
+            thumb = { modifier: Modifier,
+                      offset: Dp,
+                      interactionSource: MutableInteractionSource,
+                      enabled: Boolean,
+                      thumbSize: DpSize ->
+
                 DefaultThumb(
-                    p1,
-                    p2,
-                    p3,
-                    p4,
-                    p5,
+                    modifier, offset, interactionSource, enabled, thumbSize,
                     color = Color.Blue,
                     scaleOnPress = 1.3f
                 )

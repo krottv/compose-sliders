@@ -16,7 +16,7 @@ allprojects {
 ```
 Add the dependency
 ```
-implementation "com.github.krottv:compose-sliders:library:$compose_sliders_version"
+implementation "com.github.krottv:compose-sliders:$compose_sliders_version"
 ```
 
 # Simple Usage

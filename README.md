@@ -3,7 +3,7 @@ This package allows you to build highly customizable sliders and tracks for comp
 
 <img src="https://github.com/krottv/compose-sliders/blob/master/showcase.png?raw=true" alt="showcase" width="400"/>
 
-# Gradle
+# Add to your project
 [![Release](https://jitpack.io/v/krottv/compose-sliders.svg)](https://jitpack.io/#krottv/compose-sliders)
 
 Add it in your root build.gradle at the end of repositories:
@@ -16,7 +16,7 @@ allprojects {
 ```
 Add the dependency
 ```
-implementation "com.github.krottv:compose-sliders:library:$compose_sliders_version"
+implementation "com.github.krottv:compose-sliders:$compose_sliders_version"
 ```
 
 # Simple Usage
@@ -28,14 +28,29 @@ SliderValueHorizontal(
         .fillMaxWidth()
         .height(80.dp), steps = 10,
     thumbHeightMax = true,
-    track = { p1, p2, p3, p4, p5 -> DefaultTrack(p1, p2, p3, p4, p5, height = 4.dp) },
-    thumb = { p1, p2, p3, p4, p5 ->
+    track = { modifier: Modifier,
+                fraction: Float,
+                interactionSource: MutableInteractionSource,
+                tickFractions: List<Float>,
+                enabled: Boolean ->
+
+        DefaultTrack(
+            modifier,
+            fraction,
+            interactionSource,
+            tickFractions,
+            enabled,
+            height = 4.dp
+        )
+    },
+    thumb = { modifier: Modifier,
+                offset: Dp,
+                interactionSource: MutableInteractionSource,
+                enabled: Boolean,
+                thumbSize: DpSize ->
+
         DefaultThumb(
-            p1,
-            p2,
-            p3,
-            p4,
-            p5,
+            modifier, offset, interactionSource, enabled, thumbSize,
             color = Color.Blue,
             scaleOnPress = 1.3f
         )

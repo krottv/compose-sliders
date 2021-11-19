@@ -78,18 +78,20 @@ fun DefaultTrack(
             alpha = if (enabled) 1f else ALPHA_WHEN_DISABLED
         )
 
-        tickFractions.groupBy { it > progress }.forEach { (afterFraction, list) ->
-            drawPoints(
-                list.map {
-                    Offset(lerp(sliderStart, sliderEnd, it).x, center.y)
-                },
-                PointMode.Points,
-                if (afterFraction) colorTickTrack else colorTickProgress,
-                size.height,
-                StrokeCap.Round
-            )
+        if (tickFractions.isNotEmpty()) {
+            tickFractions.groupBy { it > progress }.forEach { (afterFraction, list) ->
+                drawPoints(
+                    list.map {
+                        Offset(lerp(sliderStart, sliderEnd, it).x, center.y)
+                    },
+                    PointMode.Points,
+                    if (afterFraction) colorTickTrack else colorTickProgress,
+                    size.height,
+                    StrokeCap.Round,
+                    alpha = if (enabled) 1f else ALPHA_WHEN_DISABLED
+                )
+            }
         }
-
     }
 }
 

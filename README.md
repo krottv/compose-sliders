@@ -1,5 +1,5 @@
 # Custom compose sliders
-This package allows you to build highly customizable sliders and tracks for compose for android
+This package allows you to build highly customizable sliders and tracks for compose for Android
 
 <img src="https://github.com/krottv/compose-sliders/blob/master/showcase.png?raw=true" alt="showcase" width="400"/>
 
@@ -123,7 +123,7 @@ SliderValueHorizontal(
 )
 ```
 # About
-The code is mainly based on Slider from compose material package with the abilities of additional customization. This project is inspired by [swiftui-sliders](https://github.com/spacenation/swiftui-sliders). Currently we have only SliderValueHorizontal and in the future it is possible to add SliderValueVertical, SliderRangeHorizonta, SliderRangeVertical if there is a demand for it.
+The code is mainly based on Slider from compose material package with the abilities of additional customization. This project is inspired by [swiftui-sliders](https://github.com/spacenation/swiftui-sliders). Currently we have only SliderValueHorizontal and in the future it is possible to add SliderValueVertical, SliderRangeHorizontal, SliderRangeVertical if there is a demand for it.
 
 # License
 
